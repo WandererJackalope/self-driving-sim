@@ -10,7 +10,15 @@
 # Assignment:   Final Project
 # Date:         04 12 2022
 
-def convert_mi_ft(dist):
+def convert_mi_ft(dist: object) -> object:
+    """
+    Convert distance in miles to feet
+
+    :param dist: miles
+    :type dist: float
+    :return: feet
+    :rtype: float
+    """
     return float(dist) * 5280
 
 
@@ -23,7 +31,16 @@ class GPS:
     directions = []
     keywordDirections = []
 
-    def __init__(self, file_name):
+    def __init__(self, file_name: object) -> object:
+        """
+        Reads a file and finds the directions and distance in the given file.
+
+        Looks for the cardinal directions in a file along for keywords such as turn left/right.
+        Finds the distance and if in miles converts it to feet as it deals in feet.
+
+        :param file_name: file with directions and distance
+        :type file_name: str
+        """
         with open(file_name) as myFile:
             self.directions = myFile.read().lower().split('\n\n')
             self.directions = [d.split('\n') for d in self.directions]
