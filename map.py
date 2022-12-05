@@ -7,11 +7,5 @@
 #               Chris Debetta
 #               Charlie Robertson
 # Section:      562
-# Assignment:   Final Project
-# Date:         04 12 2022
-
-import gps
-
-# file_name = input('Please enter the name of the file to map: ')
-gps = gps.Directions('Kyle2VetPk.txt')
-print(gps.get_kwd_directions())
+# Assignment:   ASSIGNMENT
+# Date:         DAY MONTH YEAR
