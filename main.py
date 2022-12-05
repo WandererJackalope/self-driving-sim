@@ -14,9 +14,9 @@ import gps
 import map
 
 # file_name = input('Please enter the name of the file to map: ')
-directions = gps.Directions('Kyle2VetPk.txt').get_kwd_directions()
+directions = gps.Directions('Easterwood2Coulter.txt').get_kwd_directions()
 for step in range(0, len(directions), 2):
-    distance: float = directions[step + 1][1]
+    distance: float = float(directions[step + 1][1])
     distance = distance / 65
     move_dir: str = directions[step][2]
     turn_modifier: str = directions[step][1]

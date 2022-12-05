@@ -12,13 +12,66 @@
 
 import turtle
 
-START_X = 0
-START_Y = 0
-turtle.setpos(START_X, START_Y)
-turtle.mode('standard')
-turtle.speed(1)
-turtle.pensize(5)
-turtle.color('blue')
+class TurtleSetup:
+
+    START_X = 0
+    START_Y = 0
+    turtle.setpos(START_X, START_Y)
+
+    def __init__(self, speed: int = 1, pensize: int = 5, color: str = 'blue') -> None:
+        """
+        Create the setup values for turtle and allow them to be changed
+
+        :param speed: speed of turtle
+        :type speed: int
+        :param pensize: size of turtle pen
+        :type pensize: int
+        :param color: color of turtle pen
+        :type color: str
+        :rtype: None
+        """
+        self.speed = speed
+        turtle.speed(self.speed)
+        self.pensize = pensize
+        turtle.pensize(pensize)
+        self.color = color
+        turtle.color(self.color)
+
+    def change_speed(self, speed: int) -> None:
+        """
+        change the speed of turtle
+
+        :param speed: speed of turtle
+        :type speed: int
+        :rtype: None
+        """
+        self.speed = speed
+        turtle.speed(self.speed)
+
+    def change_pensize(self, pensize: int) -> None:
+        """
+        change the pensize of turtle
+
+        :param pensize: size of turtle pen
+        :type pensize: int
+        :rtype: None
+        """
+        self.pensize = pensize
+        turtle.pensize(self.pensize)
+
+    def change_color(self, color: str) -> None:
+        """
+        change the color of turtle pen
+
+        :param color: color of turtle pen
+        :type color: str
+        :rtype: None
+        """
+        self.color = color
+        turtle.color(self.color)
+
+
+setup = TurtleSetup()
 
 
 def north(dist):
