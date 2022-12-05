@@ -47,7 +47,7 @@ class Directions:
         Reads a file and finds the directions and distance in the given file.
 
         Looks for the cardinal directions in a file along for keywords such as turn left/right.
-        Finds the distance and if in feet converts it to miles as it deals in miles.
+        Finds the distance and if in feet converts it to feet as it deals in miles.
 
         :param file_name: file with directions and distance
         :type file_name: str
@@ -71,8 +71,8 @@ class Directions:
                         if 'the' not in words[k-1]:
                             self.keyword_directions.append(['DIR', words[k - 1], words[k]])
                     elif words[k] in self.DIST_KEYWORDS:
-                        if words[k] == 'ft':
-                            self.keyword_directions.append(['DIST', convert_ft_mi(float(words[k - 1]))])
+                        if words[k] == 'mi':
+                            self.keyword_directions.append(['DIST', convert_mi_ft(float(words[k - 1]))])
                         else:
                             self.keyword_directions.append(['DIST', float(words[k - 1])])
 

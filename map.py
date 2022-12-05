@@ -13,21 +13,24 @@
 import turtle
 
 START_X = 0
-START_Y = -300
+START_Y = 0
 turtle.setpos(START_X, START_Y)
 turtle.mode('standard')
+turtle.speed(1)
+turtle.pensize(5)
+turtle.color('blue')
 
 
 def north(dist):
     """
     Change turtle's heading to north and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(90)
+    turtle.setheading(90)
     turtle.forward(dist)
 
 
@@ -35,12 +38,12 @@ def northeast(dist):
     """
     Change turtle's heading to northeast and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(45)
+    turtle.setheading(45)
     turtle.forward(dist)
 
 
@@ -48,12 +51,12 @@ def northwest(dist):
     """
     Change turtle's heading to north and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(135)
+    turtle.setheading(135)
     turtle.forward(dist)
 
 
@@ -61,12 +64,12 @@ def east(dist):
     """
     Change turtle's heading to east and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(0)
+    turtle.setheading(0)
     turtle.forward(dist)
 
 
@@ -74,12 +77,12 @@ def west(dist):
     """
     Change turtle's heading to west and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(180)
+    turtle.setheading(180)
     turtle.forward(dist)
 
 
@@ -87,12 +90,12 @@ def south(dist):
     """
     Change turtle's heading to south and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(270)
+    turtle.setheading(270)
     turtle.forward(dist)
 
 
@@ -100,12 +103,12 @@ def southeast(dist):
     """
     Change turtle's heading to southeast and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(320)
+    turtle.setheading(320)
     turtle.forward(dist)
 
 
@@ -113,12 +116,12 @@ def southwest(dist):
     """
     Change turtle's heading to southwest and move that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
     """
-    turtle.heading(225)
+    turtle.setheading(225)
     turtle.forward(dist)
 
 
@@ -126,7 +129,7 @@ def right(dist):
     """
     Turn turtle right and go that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
@@ -139,7 +142,7 @@ def left(dist):
     """
     Turn turtle left and go that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
@@ -152,7 +155,7 @@ def slight_right(dist):
     """
     Turn turtle slightly right and go that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
@@ -165,7 +168,7 @@ def slight_left(dist):
     """
     Turn turtle slightly left and go that direction a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
@@ -178,7 +181,7 @@ def continue_move(dist):
     """
     Continue moving turtle forward a specified distance
 
-    :param dist: distance in miles
+    :param dist: distance in feet
     :type dist: float
     :return: Turtle Movement
     :rtype: None
