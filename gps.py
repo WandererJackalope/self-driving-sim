@@ -9,6 +9,8 @@
 # Section:      562
 # Assignment:   Final Project
 # Date:         06 12 2022
+import turtle
+
 
 def convert_mi_ft(dist: float) -> float:
     """
@@ -37,8 +39,6 @@ class Directions:
     DIR_KEYWORDS = ['north', 'south', 'east', 'west', 'northeast', 'southeast',
                     'northwest', 'southwest', 'left', 'right', 'continue']
     DIST_KEYWORDS = ['mi', 'ft']
-    START_X = 0
-    START_Y = -300
     directions = []
     keyword_directions = []
 
