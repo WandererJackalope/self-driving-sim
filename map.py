@@ -75,10 +75,18 @@ class TurtleSetup:
 setup = TurtleSetup()
 keywordDict = {'north': 90, 'south': 270, 'east': 0, 'west': 180, 'northeast': 45, 'southeast': 320, 'northwest': 135,
                'southwest': 225}
-DIST_SCALE = 55
+DIST_SCALE = 225
 
 
-def convert_dir_to_turtle(keywords):
+def convert_dir_to_turtle(keywords: list) -> None:
+    """
+    Convert direction information to turtle headings
+
+    Converts cardinal direction information into turtle headings and moves turtle forward
+    :param keywords: route directions
+    :type keywords: list
+    :rtype: None
+    """
     if len(keywords) == 3:
         if keywords[1] + keywords[2] == 'turnright':
             turtle.right(90)
@@ -92,5 +100,12 @@ def convert_dir_to_turtle(keywords):
         turtle.setheading(keywordDict[keywords[-1]])
 
 
-def convert_dist_to_turtle(dist):
+def convert_dist_to_turtle(dist: float) -> None:
+    """
+    Convert distance information into Turtle distance and scale it to fit
+
+    :param dist: direction distance
+    :type dist: float
+    :rtype: None
+    """
     turtle.forward(dist[-1] // DIST_SCALE)
