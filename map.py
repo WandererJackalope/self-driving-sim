@@ -12,8 +12,8 @@
 
 import turtle
 
-class TurtleSetup:
 
+class TurtleSetup:
     START_X = 0
     START_Y = 0
     turtle.setpos(START_X, START_Y)

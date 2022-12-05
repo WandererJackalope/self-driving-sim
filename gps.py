@@ -9,8 +9,6 @@
 # Section:      562
 # Assignment:   Final Project
 # Date:         06 12 2022
-import turtle
-
 
 def convert_mi_ft(dist: float) -> float:
     """
@@ -61,6 +59,7 @@ class Directions:
     def find_directions(self) -> None:
         """
         Get the direction and distance and add an identifier
+
         :rtype: None
         """
         for i in range(len(self.directions)):
