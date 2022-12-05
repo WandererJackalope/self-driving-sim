@@ -35,7 +35,7 @@ def convert_ft_mi(dist: float) -> float:
 
 class Directions:
     DIR_KEYWORDS = ['north', 'south', 'east', 'west', 'northeast', 'southeast',
-                    'northwest', 'southwest', 'left', 'right', 'continue']
+                    'northwest', 'southwest', 'left', 'right']
     DIST_KEYWORDS = ['mi', 'ft']
     directions = []
     keyword_directions = []
@@ -52,8 +52,9 @@ class Directions:
         :rtype: None
         """
         with open(file_name) as myFile:
-            self.directions = myFile.read().lower().split('\n\n')
+            self.directions = myFile.read().replace('(', '').replace(')', '').lower().split('\n\n')
             self.directions = [d.split('\n') for d in self.directions]
+            print(self.directions)
             self.find_directions()
 
     def find_directions(self) -> None:
@@ -67,8 +68,10 @@ class Directions:
                 words = self.directions[i][j].split()
                 for k in range(len(words)):
                     if words[k] in self.DIR_KEYWORDS:
-                        if 'the' not in words[k-1]:
+                        if words[k-1] in ['slight', 'turn']:
                             self.keyword_directions.append(['DIR', words[k - 1], words[k]])
+                        elif words[k] not in ['left', 'right']:
+                            self.keyword_directions.append(['DIR', words[k]])
                     elif words[k] in self.DIST_KEYWORDS:
                         if words[k] == 'mi':
                             self.keyword_directions.append(['DIST', convert_mi_ft(float(words[k - 1]))])
