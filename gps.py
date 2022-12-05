@@ -8,7 +8,7 @@
 #               Charlie Robertson
 # Section:      562
 # Assignment:   Final Project
-# Date:         04 12 2022
+# Date:         06 12 2022
 
 def convert_mi_ft(dist: float) -> float:
     """

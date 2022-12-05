@@ -7,5 +7,5 @@
 #               Chris Debetta
 #               Charlie Robertson
 # Section:      562
-# Assignment:   ASSIGNMENT
-# Date:         DAY MONTH YEAR
+# Assignment:   Final Project
+# Date:         06 12 2022
