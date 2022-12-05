@@ -10,15 +10,15 @@
 # Assignment:   Final Project
 # Date:         06 12 2022
 
+import turtle
 import gps
 import map
-import turtle
 
 # file_name = input('Please enter the name of the file to map: ')
 directions = gps.Directions('Easterwood2Coulter.txt').get_kwd_directions()
 print(directions)
 for direction in directions:
-    if(direction[0] == 'DIR'):
+    if direction[0] == 'DIR':
         map.convert_dir_to_turtle(direction)
     else:
         map.convert_dist_to_turtle(direction)

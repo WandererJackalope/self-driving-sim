@@ -68,7 +68,7 @@ class Directions:
                 words = self.directions[i][j].split()
                 for k in range(len(words)):
                     if words[k] in self.DIR_KEYWORDS:
-                        if words[k-1] in ['slight', 'turn']:
+                        if words[k - 1] in ['slight', 'turn']:
                             self.keyword_directions.append(['DIR', words[k - 1], words[k]])
                         elif words[k] not in ['left', 'right']:
                             self.keyword_directions.append(['DIR', words[k]])

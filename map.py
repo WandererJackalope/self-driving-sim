@@ -71,22 +71,26 @@ class TurtleSetup:
         self.color = color
         turtle.color(self.color)
 
+
 setup = TurtleSetup()
-keywordDict = {'north': 90, 'south': 270, 'east': 0, 'west': 180, 'northeast': 45, 'southeast': 320, 'northwest': 135, 'southwest': 225}
+keywordDict = {'north': 90, 'south': 270, 'east': 0, 'west': 180, 'northeast': 45, 'southeast': 320, 'northwest': 135,
+               'southwest': 225}
 DIST_SCALE = 55
+
+
 def convert_dir_to_turtle(keywords):
-    if(len(keywords) == 3):
-        if keywords[1]+keywords[2] == 'turnright':
+    if len(keywords) == 3:
+        if keywords[1] + keywords[2] == 'turnright':
             turtle.right(90)
-        elif keywords[1]+keywords[2] == 'turnleft':
+        elif keywords[1] + keywords[2] == 'turnleft':
             turtle.left(90)
-        elif keywords[1]+keywords[2] == 'slightright':
+        elif keywords[1] + keywords[2] == 'slightright':
             turtle.right(45)
-        elif keywords[1]+keywords[2] == 'slightleft':
+        elif keywords[1] + keywords[2] == 'slightleft':
             turtle.left(45)
     else:
         turtle.setheading(keywordDict[keywords[-1]])
 
+
 def convert_dist_to_turtle(dist):
     turtle.forward(dist[-1] // DIST_SCALE)
-    
