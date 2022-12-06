@@ -16,7 +16,7 @@ import turtle
 class TurtleSetup:
     START_X = 0
     START_Y = 0
-
+    turtle.title('Self Driving Simulation')
     turtle.setpos(START_X, START_Y)
 
     def __init__(self, speed: int = 1, pensize: int = 5, color: str = 'blue') -> None:
@@ -37,6 +37,7 @@ class TurtleSetup:
         turtle.pensize(pensize)
         self.color = color
         turtle.color(self.color)
+        turtle.hideturtle()
 
     def change_speed(self, speed: int) -> None:
         """

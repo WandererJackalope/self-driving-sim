@@ -13,9 +13,8 @@
 import turtle
 import gps
 import map
-
-# file_name = input('Please enter the name of the file to map: ')
-directions = gps.Directions('Easterwood2Coulter.txt').get_kwd_directions()
+file_name = input('Please enter the name of the file to map: ')
+directions = gps.Directions(file_name).get_kwd_directions()
 print(directions)
 for direction in directions:
     if direction[0] == 'DIR':
