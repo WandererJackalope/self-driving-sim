@@ -9,13 +9,19 @@
 # Section:      562
 # Assignment:   Final Project
 # Date:         06 12 2022
-
+"""
+Main program file
+"""
 import turtle
+
 import gps
 import map
+import startup
+
+startup.instructions()
 file_name = input('Please enter the name of the file to map: ')
 directions = gps.Directions(file_name).get_kwd_directions()
-print(directions)
+# print(directions)
 for direction in directions:
     if direction[0] == 'DIR':
         map.convert_dir_to_turtle(direction)

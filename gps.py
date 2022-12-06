@@ -9,10 +9,15 @@
 # Section:      562
 # Assignment:   Final Project
 # Date:         06 12 2022
+"""
+Parse directions file into usable format and mess with the file
+"""
+
 
 def convert_mi_ft(dist: float) -> float:
     """
     Convert distance in miles to feet
+    -Chris DeBetta
 
     :param dist: miles
     :type dist: float
@@ -25,6 +30,8 @@ def convert_mi_ft(dist: float) -> float:
 def convert_ft_mi(dist: float) -> float:
     """
     convert distance in feet to miles
+    -Jackson Bailey
+
     :param dist: feet
     :type dist: float
     :return: miles
@@ -43,9 +50,9 @@ class Directions:
     def __init__(self, file_name: str) -> None:
         """
         Reads a file and finds the directions and distance in the given file.
-
         Looks for the cardinal directions in a file along for keywords such as turn left/right.
         Finds the distance and if in feet converts it to feet as it deals in miles.
+        -Chris DeBetta
 
         :param file_name: file with directions and distance
         :type file_name: str
@@ -54,12 +61,13 @@ class Directions:
         with open(file_name) as myFile:
             self.directions = myFile.read().replace('(', '').replace(')', '').lower().split('\n\n')
             self.directions = [d.split('\n') for d in self.directions]
-            print(self.directions)
+            # print(self.directions)
             self.find_directions()
 
     def find_directions(self) -> None:
         """
         Get the direction and distance and add an identifier
+        -Chris DeBetta
 
         :rtype: None
         """
@@ -78,8 +86,20 @@ class Directions:
                         else:
                             self.keyword_directions.append(['DIST', float(words[k - 1])])
 
-    def get_directions(self):
+    def get_directions(self) -> list:
+        """
+        Get raw directions from the file
+
+        :return: list of raw directions
+        :rtype: list
+        """
         return self.directions
 
     def get_kwd_directions(self):
+        """
+        Get stripped directions from the file
+
+        :return: stripped directions
+        :rtype: List[List[str]]
+        """
         return self.keyword_directions
