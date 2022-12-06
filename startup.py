@@ -26,7 +26,7 @@ def instructions() -> None:
         "Instructions: Enter the file of the place you wish to go, then press enter and the self driving car will "
         "automatically guide you to your destination!")
     print("File Options:")
-    print(" 'Kyle2VetPk-1.txt' ")
+    print(" 'Kyle2VetPk.txt' ")
     print(" 'Zach2SteepHollowRV.txt' ")
     print(" 'Zach2CaldwellHi.txt' ")
     print(

@@ -103,7 +103,24 @@ class TurtleSetup:
 setup = TurtleSetup()
 keywordDict = {'north': 90, 'south': 270, 'east': 0, 'west': 180, 'northeast': 45, 'southeast': 320, 'northwest': 135,
                'southwest': 225}
-DIST_SCALE = 70
+
+
+def get_scale(file_name: str) -> int:
+    """
+        return the proper scale based on inputted file
+        -Chris DeBetta
+
+        :param file_name: name of file to be tested
+        :type file_name: str
+        :rtype: int
+        """
+    if file_name == 'Kyle2VetPk.txt':
+        dist_scale = 70
+    elif file_name == 'Zach2CaldwellHi.txt':
+        dist_scale = 200
+    else:
+        dist_scale = 140
+    return dist_scale
 
 
 def convert_dir_to_turtle(keywords):
@@ -128,7 +145,7 @@ def convert_dir_to_turtle(keywords):
         turtle.setheading(keywordDict[keywords[-1]])
 
 
-def convert_dist_to_turtle(dist):
+def convert_dist_to_turtle(dist, scale):
     """
     convert keyword values for distance into turtle language and execute
     -Chris DeBetta & Jackson Bailey
@@ -137,4 +154,4 @@ def convert_dist_to_turtle(dist):
     :type dist: int
     :rtype: None
     """
-    turtle.forward(dist[-1] // DIST_SCALE)
+    turtle.forward(dist[-1] // scale)

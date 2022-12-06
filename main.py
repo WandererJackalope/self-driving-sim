@@ -21,10 +21,10 @@ import startup
 startup.instructions()
 file_name = input('Please enter the name of the file to map: ')
 directions = gps.Directions(file_name).get_kwd_directions()
-# print(directions)
+distScale = map.get_scale(file_name)
 for direction in directions:
     if direction[0] == 'DIR':
         map.convert_dir_to_turtle(direction)
     else:
-        map.convert_dist_to_turtle(direction)
+        map.convert_dist_to_turtle(direction, distScale)
 turtle.done()
